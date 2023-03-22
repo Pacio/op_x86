@@ -9,9 +9,11 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 
-git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/passwall/pass
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
-git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
+# git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/passwall/pass
+# find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+# find ./ | grep Makefile | grep mosdns | xargs rm -f
+# git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
+echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci-reality-share" >> feeds.conf.default
