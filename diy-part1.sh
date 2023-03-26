@@ -16,4 +16,8 @@
 # git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
-echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci-reality-share" >> feeds.conf.default
+echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
