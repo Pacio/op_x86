@@ -11,9 +11,9 @@
 
 
 sed -i 's/CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL/CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE/g' target/linux/x86/64/config-5.15
-sed -i '/CONFIG_CPU_FREQ_GOV_SCHEDUTIL/a\CONFIG_CPU_FREQ_GOV_CONSERVATIVE=y' target/linux/x86/64/config-5.15
+sed -i 's/CONFIG_CPU_FREQ_GOV_SCHEDUTIL/a\CONFIG_CPU_FREQ_GOV_CONSERVATIVE/g' target/linux/x86/64/config-5.15
 sed -i 's/CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL/CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE/g' target/linux/x86/64/config-6.1
-sed -i '/CONFIG_CPU_FREQ_GOV_SCHEDUTIL/a\CONFIG_CPU_FREQ_GOV_CONSERVATIVE=y' target/linux/x86/64/config-6.1
+sed -i 's/CONFIG_CPU_FREQ_GOV_SCHEDUTIL/a\CONFIG_CPU_FREQ_GOV_CONSERVATIVE/g' target/linux/x86/64/config-6.1
 echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
 echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
