@@ -9,11 +9,12 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
-# find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-# find ./ | grep Makefile | grep mosdns | xargs rm -f
-# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+
 # sed -i "/helloworld/d" "feeds.conf.default"
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
