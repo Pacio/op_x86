@@ -17,5 +17,5 @@
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # sed -i "/helloworld/d" "feeds.conf.default"
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
-# sed -i "/openclash/d" "feeds.conf.default"
-# echo "src-git openclash https://github.com/vernesong/OpenClash.git" >> "feeds.conf.default"
+sed -i "/openclash/d" "feeds.conf.default"
+echo "src-git openclash https://github.com/vernesong/OpenClash.git" >> "feeds.conf.default"
