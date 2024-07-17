@@ -11,6 +11,8 @@
 
 echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+echo "src-git theme_kucat https://github.com/sirpdboy/luci-theme-kucat.git;main" >> "feeds.conf.default"
+echo "src-git theme_dark https://github.com/uparrows/luci-theme-darkmatter.git;main" >> "feeds.conf.default"
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
