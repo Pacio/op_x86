@@ -9,10 +9,12 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 
+find ./ | grep Makefile | grep smartdns | xargs rm -f
 echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci-smartdns-dev" >> "feeds.conf.default"
-find ./ | grep Makefile | grep smartdns | xargs rm -f
-git clone https://github.com/pymumu/luci-app-smartdns -b lede package/smartdns
+echo "src-git smartdns https://github.com/pymumu/luci-app-smartdns.git;lede" >> "feeds.conf.default"
+
+# git clone https://github.com/pymumu/luci-app-smartdns -b lede package/smartdns
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
